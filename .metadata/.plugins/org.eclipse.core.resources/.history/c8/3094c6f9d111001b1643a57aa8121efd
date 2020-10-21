@@ -1,0 +1,11 @@
+package com.spring.member.controller;
+
+import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
+
+public class MemberControllerImpl extends MultiActionController implements MemberController{
+	private MemberService memberService;
+	public void setMemberSErvice (MemberService memberService)
+	{
+		
+	}
+}

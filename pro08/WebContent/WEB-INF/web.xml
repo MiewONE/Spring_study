@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web_app>
+	<servlet>
+		<servlet-name>loadConfig</servlet-name>
+		<servlet-class>sec06.ex02.LoadAppConfig</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+</web_app>
+

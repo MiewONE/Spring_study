@@ -1,0 +1,26 @@
+package com.spring.ex02;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
+
+public class UserController  extends MultiActionController{
+	public ModelAndView login(HttpServletRequest req,HttpServletResponse res) throws Exception
+	{
+		String userID = "";
+		String passwd = "";
+		ModelAndView mav = new ModelAndView();
+		req.setCharacterEncoding("utf-8");
+		userID = req.getParameter("userID");
+		passwd = req.getParameter("passwd");
+//		String viewName=getViewName(req);
+		
+		mav.addObject("userID", userID);
+		mav.addObject("passwd", passwd);
+		mav.setViewName("result");
+	    return mav;
+	}
+
+}

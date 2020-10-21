@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.spring.ex02.UserController&apos; to &apos;userController&apos;&#x0D;&#x0A;- Original project: &apos;pro21&apos;&#x0D;&#x0A;- Original element: &apos;com.spring.ex02.UserController&apos;&#x0D;&#x0A;- Renamed element: &apos;com.spring.ex02.userController&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;UserController&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.spring.ex02{UserController.java[UserController" matchStrategy="1" name="userController" qualified="false" references="true" similarDeclarations="false" stamp="1603074326593" textual="false" version="1.0"/>
+</session>
