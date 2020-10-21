@@ -1,7 +1,7 @@
 package com.spring.ex03;
 
+
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/memsd.do")
+import com.spring.ex01.MemberVO;
+
+@WebServlet("/mem4.do")
 public class MemberServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doHandle(request, response);
@@ -32,7 +34,35 @@ public class MemberServlet extends HttpServlet {
 		if(action ==null || action.equals("listMembers"))
 		{
 			List<MemberVO> membersList = dao.selectAllMemberList();
+			request.setAttribute("membersList", membersList);
+			nextPage = "test02/listMembers.jsp";
+		}else if(action.equals("selectMemberById"))
+		{
+			String id = request.getParameter("value");
+			memberVO=dao.selectmemberById(id);
+			request.setAttribute("member",memberVO);
+			nextPage = "test02/memberInfo.jsp";
+		}else if(action.equals("selectMemberByPwd"))
+		{
+			int pwd = Integer.parseInt(request.getParameter("value"));
+			List<MemberVO> membersList = dao.selectMemberByPwd(pwd);
+			request.setAttribute("membersList",membersList);
+			nextPage = "test02/listMembers.jsp";
+		}else if (action.equals("insertMember"))
+		{
+			String id = request.getParameter("id");
+			String pwd = request.getParameter("pwd");
+			String name = request.getParameter("name");
+			String email = request.getParameter("email");
+			memberVO.setId(id);
+			memberVO.setPwd(pwd);
+			memberVO.setName(name);
+			memberVO.setEmail(email);
+			dao.insertMember(memberVO);
+			nextPage="/mem4.do?action=listMembers";
 		}
+		RequestDispatcher dispatch = request.getRequestDispatcher(nextPage);
+		dispatch.forward(request,response);
 //		String name = dao.selectName();
 ////		int pwd = dao.selectPwd();
 //		PrintWriter pw = response.getWriter();

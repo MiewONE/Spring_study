@@ -52,18 +52,35 @@ public class MemberDAO {
 		int pwd = session.selectOne("mapper.member.selectPwd");
 		return pwd;
 	}
-	 public List<HashMap<String, String>> selectAllMemberList() { 
+	 public List<MemberVO> selectAllMemberList() { 
 		sqlMapper = getInstance(); 
      	SqlSession session = sqlMapper.openSession();
-		List<HashMap<String, String>> memlist = null; 
-   	memlist = session.selectList("mapper.member.selectAllMemberList"); 
+		List<MemberVO> memlist = null; 
+		memlist = session.selectList("mapper.member.selectAllMemberList"); 
 		return memlist; 
+	 }
+	 public List<MemberVO> selectMemberByPwd(int pwd)
+	 {
+		 sqlMapper = getInstance();
+		 SqlSession session = sqlMapper.openSession();
+		 List<MemberVO> memberList = null;
+		 memberList = session.selectList("mapper.member.selectMemberByPwd",pwd);
+		 return memberList;
 	 }
 	public MemberVO selectmemberById(String id)
 	{
 		sqlMapper = getInstance();
 		SqlSession session = sqlMapper.openSession();
-		MemberVO memberVO = session.selectOne("mapper.member.selectMemberById");
+		MemberVO memberVO = session.selectOne("mapper.member.selectMemberById",id);
 		return memberVO;
+	}
+	public int insertMember(MemberVO memberVO)
+	{
+		sqlMapper = getInstance();
+		SqlSession session = sqlMapper.openSession();
+		int result = 0;
+		result = session.insert("mapper.member.insertMember",memberVO);
+		session.commit();
+		return result;
 	}
 }
