@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configguration>
+	<typeAliases>
+		<typeAlias type="com.spring.member.vo.MemverVO" alias="memberVO"/>
+	</typeAliases>
+</configguration>
