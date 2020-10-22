@@ -20,3 +20,12 @@
 127.0.0.1 - - [21/Oct/2020:20:51:07 +0900] "GET /pro23/memsd.do?value=park&action=selectMemberById HTTP/1.1" 200 531
 127.0.0.1 - - [21/Oct/2020:20:51:10 +0900] "GET /pro23/memsd.do?value=ki&action=selectMemberById HTTP/1.1" 200 566
 127.0.0.1 - - [21/Oct/2020:20:51:25 +0900] "GET /pro23/memsd.do?value=pa&action=selectMemberById HTTP/1.1" 200 531
+127.0.0.1 - - [21/Oct/2020:21:15:04 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [21/Oct/2020:21:15:22 +0900] "GET /pro23/test03/memberForm.jsp HTTP/1.1" 200 506
+0:0:0:0:0:0:0:1 - - [21/Oct/2020:21:16:09 +0900] "GET /pro23/test03/memberForm.jsp HTTP/1.1" 200 1125
+0:0:0:0:0:0:0:1 - - [21/Oct/2020:21:16:39 +0900] "GET /pro23/test03/memberForm.jsp HTTP/1.1" 200 1113
+0:0:0:0:0:0:0:1 - - [21/Oct/2020:21:16:54 +0900] "POST /pro23/mem4.do?action=insertMember HTTP/1.1" 200 890
+127.0.0.1 - - [21/Oct/2020:22:57:14 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [21/Oct/2020:22:57:29 +0900] "GET /pro23/test03/searchMember.jsp HTTP/1.1" 200 429
+0:0:0:0:0:0:0:1 - - [21/Oct/2020:22:57:29 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [21/Oct/2020:22:59:42 +0900] "GET /pro23/mem5.do?action=searchMember&name=%EC%A7%80%EC%9C%A4&email=wldbs%40naver.com HTTP/1.1" 200 754

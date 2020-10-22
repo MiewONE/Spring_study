@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.spring.ex01.MemberVO;
 
-@WebServlet("/memsd.do")
+@WebServlet("/mem5.do")
 public class MemberServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doHandle(request, response);
@@ -48,6 +48,16 @@ public class MemberServlet extends HttpServlet {
 			List<MemberVO> membersList = dao.selectMemberByPwd(pwd);
 			request.setAttribute("membersList",membersList);
 			nextPage = "test02/listMembers.jsp";
+		}else if(action.contentEquals("searchMember"))
+		{
+			String name= request.getParameter("name");
+			String email = request.getParameter("email");
+			
+			memberVO.setName(name);
+			memberVO.setEmail(email);
+			List<MemberVO> membersList = dao.searchMember(memberVO);
+			request.setAttribute("membersList", membersList);
+			nextPage = "test03/listMembers.jsp";
 		}
 		RequestDispatcher dispatch = request.getRequestDispatcher(nextPage);
 		dispatch.forward(request,response);

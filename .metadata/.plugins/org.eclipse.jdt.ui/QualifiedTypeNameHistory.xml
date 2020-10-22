@@ -15,4 +15,5 @@
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="org.json.simple.parser.JSONParser"/>
     <fullyQualifiedTypeName name="org.aopalliance.intercept.MethodInvocation"/>
+    <fullyQualifiedTypeName name="com.spring.ex01.MemberVO"/>
 </qualifiedTypeNameHistroy>
