@@ -19,4 +19,6 @@
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.spring.member.vo.MemberVO"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+    <fullyQualifiedTypeName name="org.slf4j.Logger"/>
+    <fullyQualifiedTypeName name="net.coobird.thumbnailator.Thumbnails"/>
 </qualifiedTypeNameHistroy>
